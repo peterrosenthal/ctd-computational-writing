@@ -1,5 +1,5 @@
 // A HOUSE OF DUST
-// written for (and from) ATLS 5xxx - Computational Writing
+// written for (and from) ATLS 5519 - Computational Writing
 
 
 const materials = ["SAND", "BRICK", "STRAW", "DRIFTWOOD", "WOOD", "SUNLIGHT", "WIND", "DUST", "STARDUST", "TURBULENT DREAMS", "DREAMS"];
@@ -31,7 +31,8 @@ const getRandomInt = (min, max) => {
 const getRandomWord = (list) => list[getRandomInt(0, list.length - 1)];
 
 const setPoem = () => {
-    // assign random values and bounce directions at 0 and 4 lines
+    // assign random values at 0 lines
+    // and bounce directions at 0 and 4 lines
     if (numLines == 0) {
         material = getRandomWord(materials);
         preposition = getRandomWord(prepositions);
@@ -45,14 +46,14 @@ const setPoem = () => {
     }
 
     // fill innerHTMLs based on how many lines we are trying to draw
-    lineOne.innerHTML = "<h1>A HOUSE OF</h1>";
+    lineOne.innerHTML = "A HOUSE OF";
     lineTwo.innerHTML = "";
     lineThree.innerHTML = "";
     lineFour.innerHTML = "";
-    if (numLines > 0) lineOne.innerHTML = "<h1>A HOUSE OF " + material + "</h1>";
-    if (numLines > 1) lineTwo.innerHTML = "<h2>" + preposition + " " + place + "</h2>";
-    if (numLines > 2) lineThree.innerHTML = "<h3>USING " + lighting + "</h3>";
-    if (numLines > 3) lineFour.innerHTML = "<h4>INHABITED BY " + inhabitant + "</h4>";
+    if (numLines > 0) lineOne.innerHTML = "A HOUSE OF " + material;
+    if (numLines > 1) lineTwo.innerHTML = preposition + " " + place;
+    if (numLines > 2) lineThree.innerHTML = "USING " + lighting;
+    if (numLines > 3) lineFour.innerHTML = "INHABITED BY " + inhabitant;
 
     // setTimeout pretty short normally, but linger for a while on the full poem
     let timeout = 500;
