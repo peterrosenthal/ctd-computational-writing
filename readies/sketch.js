@@ -7,13 +7,13 @@ class TextItem {
         this.y = window.innerHeight / 2;
     }
 
-    updatePosition() {
+    updatePosition = () => {
         this.x -= this.speed * (1 + this.acceleration * Math.abs(this.x - window.innerWidth / 2) / window.innerWidth);
-    }
+    };
 
-    draw(p5) {
+    draw = (p5) => {
         p5.text(this.text, this.x, this.y);
-    }
+    };
 }
 
 let sketch = new p5((p5) => {
