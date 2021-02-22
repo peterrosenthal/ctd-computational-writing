@@ -1,12 +1,24 @@
 export default class Settings {
     constructor(sketch) {
+        const buttonsGroup = document.getElementById("buttons");
         const showSettingsButton = document.getElementById("showSettings");
+        const settingsObject = document.getElementById("settings");
+        const applySettingsButton = document.getElementById("applySettings");
+        const closeSettingsButton = document.getElementById("closeSettings");
         const settingsTypeCheckbox = document.getElementById("settingsType");
         const simpleSettingsSection = document.getElementById("simpleSettings");
+        const simpleSpeedObject = document.getElementById("simpleSpeed");
         const advancedSettingsSection = document.getElementById("advancedSettings");
+        const textSpeedObject = document.getElementById("textSpeed");
+        const textAccelerationObject = document.getElementById("textAcceleration");
+        const textFrequencyObject = document.getElementById("textFrequency");
+        const fontSizeObject = document.getElementById("fontSize");
+        const bgColorObject = document.getElementById("backgroundColor");
+        const fgColorObject = document.getElementById("foregroundColor");
 
         showSettingsButton.addEventListener("click", () => {
-            formObject.style.display = "block";
+            settingsObject.style.display = "block";
+            buttonsGroup.style.display = "none";
         });
 
         settingsTypeCheckbox.addEventListener("click", () => {
@@ -17,19 +29,9 @@ export default class Settings {
                 simpleSettingsSection.style.display = "block";
                 advancedSettingsSection.style.display = "none";
             }
-        })
+        });
 
-        const formObject = document.getElementById("settings");
-        const textSpeedObject = document.getElementById("textSpeed");
-        const textAccelerationObject = document.getElementById("textAcceleration");
-        const textFrequencyObject = document.getElementById("textFrequency");
-        const simpleSpeedObject = document.getElementById("simpleSpeed");
-        const fontSizeObject = document.getElementById("fontSize");
-        const bgColorObject = document.getElementById("backgroundColor");
-        const fgColorObject = document.getElementById("foregroundColor");
-
-        formObject.addEventListener("submit", (e) => {
-            e.preventDefault();
+        applySettingsButton.addEventListener("click", () => {
             if (settingsTypeCheckbox.checked === true) {
                 this.textSpeed = textSpeedObject.value;
                 this.textAcceleration = textAccelerationObject.value;
@@ -47,8 +49,7 @@ export default class Settings {
             sketch.foregroundColor = fgColorObject.value;
         });
 
-        formObject.addEventListener("reset", (e) => {
-            e.preventDefault();
+        closeSettingsButton.addEventListener("click", () => {
             textSpeedObject.value = this.textSpeed;
             textAccelerationObject.value = this.textAcceleration;
             textFrequencyObject.value = this.textFrequency;
@@ -57,6 +58,7 @@ export default class Settings {
             fgColorObject.value = sketch.foregroundColor;
 
             formObject.style.display = "none";
+            buttonsGroup.style.display = "block";
         });
 
         if (settingsTypeCheckbox.checked === true) {

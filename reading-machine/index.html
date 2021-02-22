@@ -10,14 +10,15 @@
     <body>
         <div id="buttons">
             <button id="showSettings"><img src="images/settings.png" alt="Settings"></button>
+            <button id="help"><img src="images/help.png" alt="Help"></button>
         </div>
-        <form id="settings">
-            <button type="reset" id="closeSettings"><img src="images/close.png" alt="Close"></button>
+        <div id="settings">
+            <button id="closeSettings"><img src="images/close.png" alt="Close"></button>
             <br>
             <div class="centered">
                 <div id="textSettings">
                     <label for="settingsType">Custom Speed Settings:</label>
-                    <input type="checkbox" id="settingsType" name="settingsType" checked>
+                    <input type="checkbox" id="settingsType" name="settingsType">
                     <div id="simpleSettings">
                         <br>
                         <label for="simpleSpeed">Speed:</label>
@@ -46,9 +47,9 @@
                     <input type="number" id="foregroundColor" name="foregroundColor" value="0">
                 </div>
                 <br>
-                <button type="submit" id="applySettings"><img src="images/apply.png" alt="Apply Settings"></button>
+                <button id="applySettings"><img src="images/apply.png" alt="Apply Settings"></button>
             </div>
-        </form>
+        </div>
 
         <div id="sketch"></div>
 
