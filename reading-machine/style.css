@@ -1,0 +1,81 @@
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#buttons {
+    position: absolute;
+    z-index: 1;
+    left: 2vw;
+    top: 2vh;
+}
+
+#settings {
+    background-color: #d0d0d0;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    left: 1vw;
+    top: 1vh;
+    width: 98vw;
+    border-radius: 1em;
+    border-width: 0;
+}
+
+.centered {
+    text-align: center;
+}
+
+#closeSettings {
+    margin: 2em 0 0 2em;
+}
+
+#applySettings {
+    margin: 0 0 2em 0;
+}
+
+#textSpeed, #textAcceleration, #textFrequency, #fontSize, #backgroundColor, #foregroundColor {
+    width: 3em;
+}
+
+#textSettings, #sketchSettings {
+    width: 45%;
+    margin: 2em;
+    display: inline-block;
+}
+
+#simpleSpeed {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20em;
+    height: 1.3em;
+    margin: .3em;
+    background: #444;
+    border-width: 0;
+    border-radius: 10px;
+    outline: none;
+    opacity: 0.95;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+#simpleSpeed:hover {
+    opacity: 1;
+}
+
+#simpleSpeed::-webkit-slider-thumb, #simpleSpeed::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: .9em;
+    height: .9em;
+    background: #d0d0d0;
+    cursor: pointer;
+}
+
+#sketch {
+    width: 100vw;
+    height: 99.524456vh;
+    margin: 0;
+    padding: 0;
+}
