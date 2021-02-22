@@ -9,10 +9,17 @@ body {
 
 button {
     font-family: 'Montserrat', sans-serif;
+    background: none;
+    border: 0;
 }
 
 input {
     font-family: 'Montserrat', sans-serif;
+}
+
+.icon {
+    width: 2.5em;
+    height: 2.5em;
 }
 
 #buttons {
@@ -22,23 +29,24 @@ input {
     top: 2vh;
 }
 
-#settings {
-    background-color: #eeeeee;
+#settings, #help {
+    background-color: #ffffff;
     display: none;
     position: absolute;
     z-index: 1;
     left: 1vw;
     top: 1vh;
     width: 98vw;
-    border-radius: 1em;
+    border-radius: 8px;
     border-width: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .centered {
     text-align: center;
 }
 
-#closeSettings {
+#closeSettings, #closeHelp {
     margin: 2em 0 0 2em;
 }
 
@@ -63,8 +71,10 @@ input {
     height: 1.3em;
     margin: .3em;
     background: #666666;
-    border-width: 0;
-    border-radius: 10px;
+    border-width: 2px;
+    border-color: #666666;
+    border-radius: 4px;
+    padding: 0 2px 0 2px;
     outline: none;
     opacity: 0.95;
     -webkit-transition: 0.2s;
@@ -80,8 +90,14 @@ input {
     appearance: none;
     width: .9em;
     height: .9em;
-    background: #eeeeee;
+    background: #ffffff;
+    border-radius: 4px;
+    border-width: 0;
     cursor: pointer;
+}
+
+#help p {
+    margin: 2em;
 }
 
 #sketch {

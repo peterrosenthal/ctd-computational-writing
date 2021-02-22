@@ -15,10 +15,23 @@ export default class Settings {
         const fontSizeObject = document.getElementById("fontSize");
         const bgColorObject = document.getElementById("backgroundColor");
         const fgColorObject = document.getElementById("foregroundColor");
+        const showHelpButton = document.getElementById("showHelp");
+        const helpObject = document.getElementById("help");
+        const closeHelpButton = document.getElementById("closeHelp");
 
         showSettingsButton.addEventListener("click", () => {
             settingsObject.style.display = "block";
             buttonsGroup.style.display = "none";
+        });
+
+        showHelpButton.addEventListener("click", () => {
+            helpObject.style.display = "block";
+            buttonsGroup.style.display = "none";
+        });
+
+        closeHelpButton.addEventListener("click", () => {
+            helpObject.style.display = "none";
+            buttonsGroup.style.display = "block";
         });
 
         settingsTypeCheckbox.addEventListener("click", () => {
@@ -57,7 +70,7 @@ export default class Settings {
             bgColorObject.value = sketch.backgroundColor;
             fgColorObject.value = sketch.foregroundColor;
 
-            formObject.style.display = "none";
+            settingsObject.style.display = "none";
             buttonsGroup.style.display = "block";
         });
 
