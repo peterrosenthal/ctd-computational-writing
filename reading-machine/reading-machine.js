@@ -1,19 +1,20 @@
 import Sketch from "./sketch.js";
 import FlyingText from "./flying-text.js";
 import Settings from "./settings.js";
-
-const textForTesting = ["this", "is", "some", "test", "text", " ", " ", " "];
+import { story } from "./bob-brown-text.js";
 
 const sketch = new Sketch(document.getElementById("sketch"));
 const settings = new Settings(sketch);
 
 const addText = (index) => {
-    const newText = new FlyingText(textForTesting[index], settings.textSpeed, settings.textAcceleration, sketch.width, sketch.height);
+    const newText = new FlyingText(story[index], settings.textSpeed, settings.textAcceleration, sketch.width, sketch.height);
     const timeout = 1000 / settings.textFrequency;
-    index = (index + 1) % textForTesting.length;
     
     sketch.flyingTextItems.push(newText);
-    setTimeout(() => addText(index), timeout);
+    if (settings.textIndex < story.length) {
+        settings.textIndex++;
+        setTimeout(() => addText(settings.textIndex), timeout);
+    }
 };
 
-addText(0);
+setTimeout(() => addText(0), 1000);

@@ -1,6 +1,9 @@
 export default class Settings {
     constructor(sketch) {
         const buttonsGroup = document.getElementById("buttons");
+        const playButton = document.getElementById("playButton");
+        const pauseButton = document.getElementById("pauseButton");
+        const replayButton = document.getElementById("replayButton");
         const showSettingsButton = document.getElementById("showSettings");
         const settingsObject = document.getElementById("settings");
         const applySettingsButton = document.getElementById("applySettings");
@@ -22,6 +25,35 @@ export default class Settings {
         const showHelpButton = document.getElementById("showHelp");
         const helpObject = document.getElementById("help");
         const closeHelpButton = document.getElementById("closeHelp");
+
+        playButton.addEventListener("click", () => {
+            if (settingsTypeCheckbox.checked === true) {
+                this.textSpeed = textSpeedObject.value;
+                this.textAcceleration = textAccelerationObject.value;
+                this.textFrequency = textFrequencyObject.value;
+            } else {
+                this.textSpeed = 5 + simpleSpeedObject.value / 6;
+                this.textAcceleration = 3 + simpleSpeedObject.value / 20;
+                this.textFrequency = 1 + simpleSpeedObject.value / 10;
+                textSpeedObject.value = this.textSpeed;
+                textAccelerationObject.value = this.textAcceleration;
+                textFrequencyObject.value = this.textFrequency;
+            }
+            playButton.style.display = "none";
+            pauseButton.style.display = "inline-block";
+        });
+
+        pauseButton.addEventListener("click", () => {
+            this.textSpeed = 0;
+            this.textAcceleration = 0;
+            this.textFrequency = 0;
+            playButton.style.display = "inline-block";
+            pauseButton.style.display = "none";
+        });
+
+        replayButton.addEventListener("click", () => {
+            this.textIndex = 0;
+        });
 
         showSettingsButton.addEventListener("click", () => {
             settingsObject.style.display = "block";
@@ -89,19 +121,14 @@ export default class Settings {
         if (settingsTypeCheckbox.checked === true) {
             simpleSettingsSection.style.display = "none";
             advancedSettingsSection.style.display = "block";
-            this.textSpeed = textSpeedObject.value;
-            this.textAcceleration = textAccelerationObject.value;
-            this.textFrequency = textFrequencyObject.value;
         } else {
             simpleSettingsSection.style.display = "block";
             advancedSettingsSection.style.display = "none";
-            this.textSpeed = 5 + simpleSpeedObject.value / 6;
-            this.textAcceleration = 3 + simpleSpeedObject.value / 20;
-            this.textFrequency = 1 + simpleSpeedObject.value / 10;
-            textSpeedObject.value = this.textSpeed;
-            textAccelerationObject.value = this.textAcceleration;
-            textFrequencyObject.value = this.textFrequency;
         }
+        this.textIndex = 0;
+        this.textSpeed = 0;
+        this.textAcceleration = 0;
+        this.textFrequency = 0;
         sketch.fontSize = fontSizeObject.value;
         sketch.backgroundColorR = bgColorRObject.value;
         sketch.backgroundColorG = bgColorGObject.value;
@@ -109,5 +136,7 @@ export default class Settings {
         sketch.foregroundColorR = fgColorRObject.value;
         sketch.foregroundColorG = fgColorGObject.value;
         sketch.foregroundColorB = fgColorBObject.value;
+        playButton.style.display = "inline-block";
+        pauseButton.style.display = "none";
     }
 }
