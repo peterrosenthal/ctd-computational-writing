@@ -13,8 +13,12 @@ export default class Settings {
         const textAccelerationObject = document.getElementById("textAcceleration");
         const textFrequencyObject = document.getElementById("textFrequency");
         const fontSizeObject = document.getElementById("fontSize");
-        const bgColorObject = document.getElementById("backgroundColor");
-        const fgColorObject = document.getElementById("foregroundColor");
+        const bgColorRObject = document.getElementById("backgroundColorR");
+        const bgColorGObject = document.getElementById("backgroundColorG");
+        const bgColorBObject = document.getElementById("backgroundColorB");
+        const fgColorRObject = document.getElementById("foregroundColorR");
+        const fgColorGObject = document.getElementById("foregroundColorG");
+        const fgColorBObject = document.getElementById("foregroundColorB");
         const showHelpButton = document.getElementById("showHelp");
         const helpObject = document.getElementById("help");
         const closeHelpButton = document.getElementById("closeHelp");
@@ -58,8 +62,12 @@ export default class Settings {
                 textFrequencyObject.value = this.textFrequency;
             }
             sketch.fontSize = fontSizeObject.value;
-            sketch.backgroundColor = bgColorObject.value;
-            sketch.foregroundColor = fgColorObject.value;
+            sketch.backgroundColorR = bgColorRObject.value;
+            sketch.backgroundColorG = bgColorGObject.value;
+            sketch.backgroundColorB = bgColorBObject.value;
+            sketch.foregroundColorR = fgColorRObject.value;
+            sketch.foregroundColorG = fgColorGObject.value;
+            sketch.foregroundColorB = fgColorBObject.value;
         });
 
         closeSettingsButton.addEventListener("click", () => {
@@ -67,8 +75,12 @@ export default class Settings {
             textAccelerationObject.value = this.textAcceleration;
             textFrequencyObject.value = this.textFrequency;
             fontSizeObject.value = sketch.fontSize;
-            bgColorObject.value = sketch.backgroundColor;
-            fgColorObject.value = sketch.foregroundColor;
+            bgColorRObject.value = sketch.backgroundColorR;
+            bgColorGObject.value = sketch.backgroundColorG;
+            bgColorBObject.value = sketch.backgroundColorB;
+            fgColorRObject.value = sketch.foregroundColorR;
+            fgColorGObject.value = sketch.foregroundColorG;
+            fgColorBObject.value = sketch.foregroundColorB;
 
             settingsObject.style.display = "none";
             buttonsGroup.style.display = "block";
@@ -91,7 +103,11 @@ export default class Settings {
             textFrequencyObject.value = this.textFrequency;
         }
         sketch.fontSize = fontSizeObject.value;
-        sketch.backgroundColor = bgColorObject.value;
-        sketch.foregroundColor = fgColorObject.value;
+        sketch.backgroundColorR = bgColorRObject.value;
+        sketch.backgroundColorG = bgColorGObject.value;
+        sketch.backgroundColorB = bgColorBObject.value;
+        sketch.foregroundColorR = fgColorRObject.value;
+        sketch.foregroundColorG = fgColorGObject.value;
+        sketch.foregroundColorB = fgColorBObject.value;
     }
 }

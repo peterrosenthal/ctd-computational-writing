@@ -2,8 +2,12 @@ export default class Sketch {
     constructor(parent) {
         this.flyingTextItems = []; // since js has the weakest typing known to humankind, I should be clear here: flyingTextItems should only ever be populated by FlyingText objects from the flying-text.js file
         this.fontSize = 32; // default font size 32
-        this.backgroundColor = 255; // default bg color white
-        this.foregroundColor = 0; // default fg color black
+        this.backgroundColorR = 255; // default bg color white
+        this.backgroundColorG = 255; // default bg color white
+        this.backgroundColorB = 255; // default bg color white
+        this.foregroundColorR = 0; // default fg color black
+        this.foregroundColorG = 0; // default fg color black
+        this.foregroundColorB = 0; // default fg color black
         this.width = parent.clientWidth;
         this.height = parent.clientHeight;
         new p5((P5) => {
@@ -18,8 +22,8 @@ export default class Sketch {
             };
             P5.draw = () => {
                 P5.textSize(Math.floor(this.fontSize));
-                P5.background(Math.floor(this.backgroundColor));
-                P5.fill(Math.floor(this.foregroundColor));
+                P5.background(P5.color(Math.floor(this.backgroundColorR), Math.floor(this.backgroundColorG), Math.floor(this.backgroundColorB)));
+                P5.fill(P5.color(Math.floor(this.foregroundColorR), Math.floor(this.foregroundColorG), Math.floor(this.foregroundColorB)));
                 this.flyingTextItems.forEach((flyingText) => {
                     flyingText.updatePosition();
                     P5.text(flyingText.text, flyingText.x, flyingText.y);

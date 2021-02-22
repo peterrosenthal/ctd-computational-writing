@@ -54,7 +54,8 @@ input {
     margin: 0 0 2em 0;
 }
 
-#textSpeed, #textAcceleration, #textFrequency, #fontSize, #backgroundColor, #foregroundColor {
+#textSpeed, #textAcceleration, #textFrequency, #fontSize,
+#backgroundColorR, #backgroundColorG, #backgroundColorB, #foregroundColorR, #foregroundColorG, #foregroundColorB {
     width: 3em;
 }
 

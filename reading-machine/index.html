@@ -34,18 +34,26 @@
                         <input type="number" id="textAcceleration" name="textAcceleration" step="0.01" value="5">
                         <br>
                         <label for="textFrequency">Text Spawn Rate (words per second):</label>
-                        <input type="number" id="textFrequency" name="textFrequency" step="0.01" value="15">
+                        <input type="number" id="textFrequency" name="textFrequency" step="0.01" min="1" value="15">
                     </div>
                 </div>
                 <div id="sketchSettings">
                     <label for="fontSize">Font Size:</label>
                     <input type="number" id="fontSize" name="fontSize" value="32">
                     <br>
-                    <label for="backgroundColor">Background Color:</label>
-                    <input type="number" id="backgroundColor" name="backgroundColor" value="255">
+                    <label for="backgroundColor">Background Color (RGB):</label>
+                    <span id="backgroundColor">
+                        <input type="number" id="backgroundColorR" name="backgroundColorR" min="0" max="255" value="255">
+                        <input type="number" id="backgroundColorG" name="backgroundColorG" min="0" max="255" value="255">
+                        <input type="number" id="backgroundColorB" name="backgroundColorB" min="0" max="255" value="255">
+                    </span>
                     <br>
-                    <label for="foregroundColor">Foreground Color:</label>
-                    <input type="number" id="foregroundColor" name="foregroundColor" value="0">
+                    <label for="foregroundColor">Foreground Color (RGB):</label>
+                    <span id="foregroundColor">
+                        <input type="number" id="foregroundColorR" name="foregroundColorR" min="0" max="255" value="0">
+                        <input type="number" id="foregroundColorG" name="foregroundColorG" min="0" max="255" value="0">
+                        <input type="number" id="foregroundColorB" name="foregroundColorB" min="0" max="255" value="0">
+                    </span>
                 </div>
                 <br>
                 <button id="applySettings"><img class="icon" src="images/apply.png" alt="Apply Settings"></button>
@@ -55,7 +63,7 @@
         <div id="help">
             <button id="closeHelp"><img class="icon" src="images/close.png" alt="Close"></button>
             <p>
-                Hello and welcome to my Reading Machine! This creation was inspired by the "Reading Machine" featured in Bob Brown's <em>The Readies</em> manifesto. Text scrolls by at a machine-determined rate so that reading becomes a much quicker and more passive action, similar to modern speed reading devices except with motion instead of flashes. Bob Brown's manifesto also included envisioned changes to writing style to go along with his fictional device, such as the replacement of punctuation with physical and temporal spacing of words. They also thought that certain "meaningless" words, such as this and or but, would be left out as the reader could fill in the gaps in their mind, and that many other normal words would get "smashed toghether" to create fewer and more meaning packed words per book. The last chapter of their manifesto is a story written with these changes in mind. There we're two major problems with this story, the first was that it was still in a book with line breaks, a form that writing was never intended to be in, and the second was that they tried fixing the first problem with dashes... way too many dashes. I've attempted to fix these problems myself, replacing the dashes with physical/temporal spacing, and playing it through my own Reading Machine instead of trying to read it from a book with lines. I've also decided to include some settings, something which was not clear if Brown had planned for in their "Reading Machine." The speed of the device is tied to a slider in the settings panel, though there are actually 3 values that the slider controlls, and there is an "advanced setttings" version that allows you to controll the 3 speed values independently if you so desire. Also customizable through the settings with my own Reading Machine is the text size (something that Brown did specify to account for, using magnifying lenses), as well as the background and forground colors (stuck to greyscale... for now).
+                Hello and welcome to my Reading Machine! This creation was inspired by the "Reading Machine" featured in Bob Brown's <em>The Readies</em> manifesto. Text scrolls by at a machine-determined rate so that reading becomes a much quicker and more passive action, similar to modern speed reading devices except with motion instead of flashes. Bob Brown's manifesto also included envisioned changes to writing style to go along with his fictional device, such as the replacement of punctuation with physical and temporal spacing of words. They also thought that certain "meaningless" words, such as this and or but, would be left out as the reader could fill in the gaps in their mind, and that many other normal words would get "smashed toghether" to create fewer and more meaning packed words per book. The last chapter of their manifesto is a story written with these changes in mind. There we're two major problems with this story, the first was that it was still in a book with line breaks, a form that writing was never intended to be in, and the second was that they tried fixing the first problem with dashes... way too many dashes. I've attempted to fix these problems myself, replacing the dashes with physical/temporal spacing, and playing it through my own Reading Machine instead of trying to read it from a book with lines. I've also decided to include some settings, something which was not clear if Brown had planned for in their "Reading Machine." The speed of the device is tied to a slider in the settings panel, though there are actually 3 values that the slider controlls, and there is an "advanced setttings" version that allows you to controll the 3 speed values independently if you so desire. Also customizable through the settings with my own Reading Machine is the text size (something that Brown did specify to account for, using magnifying lenses), as well as the background and forground colors.
             </p>
         </div>
 
