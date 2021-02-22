@@ -27,6 +27,9 @@ export default class Settings {
         const closeHelpButton = document.getElementById("closeHelp");
 
         playButton.addEventListener("click", () => {
+            if (this.textIndex == -1) {
+                this.textIndex = 0;
+            }
             if (settingsTypeCheckbox.checked === true) {
                 this.textSpeed = textSpeedObject.value;
                 this.textAcceleration = textAccelerationObject.value;
@@ -125,7 +128,7 @@ export default class Settings {
             simpleSettingsSection.style.display = "block";
             advancedSettingsSection.style.display = "none";
         }
-        this.textIndex = 0;
+        this.textIndex = -1;
         this.textSpeed = 0;
         this.textAcceleration = 0;
         this.textFrequency = 0;
@@ -136,7 +139,5 @@ export default class Settings {
         sketch.foregroundColorR = fgColorRObject.value;
         sketch.foregroundColorG = fgColorGObject.value;
         sketch.foregroundColorB = fgColorBObject.value;
-        playButton.style.display = "inline-block";
-        pauseButton.style.display = "none";
     }
 }

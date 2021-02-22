@@ -11,12 +11,13 @@ const addText = (index) => {
     const timeout = 1000 / settings.textFrequency;
     
     sketch.flyingTextItems.push(newText);
-    if (settings.textIndex < story.length - 1) {
+    if (settings.textIndex < story.length - 1 && settings.textIndex > -1) {
         settings.textIndex++;
         setTimeout(() => addText(settings.textIndex), timeout);
     } else {
         document.getElementById("playButton").style.display = "inline-block";
         document.getElementById("pauseButton").style.display = "none";
+        setTimeout(() => addText(0), 1000);
     }
 };
 
