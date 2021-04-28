@@ -9,12 +9,23 @@ class SummonerNameGenerator():
   ]
   name_part1s = [
     'Tryhard', 'Cursed', 'Sad', 'E', 'ez',
-    'Slayer', 'Star', 'Tiny', 'Sad',
+    'Slayer', 'Star', 'Tiny', 'Sad', 'Candy',
+    'Blank', 'Elephant', 'Mean', 'Angry',
+    'Toxic', 'Shy', 'Flower', 'Oblong', 'Round',
+    'Rotund', 'Square', 'Large', 'Fast', 'Quick',
+    'Sexy', 'Carrot', 'Broccoli', 'Pipe',
+    'Solar', 'Wild', 'Pleasant', 'Beans', 'Oily',
+    'Winter', 'Summer', 'Fall', 'Hotel'
   ]
   name_part2s = [
-    '', '', '', '',
+    '', '', '', '', '', '', '', '', '',
     'Egg', 'World', 'Cat', 'Boy', 'Girl',
-    'pz', 'Star', 'Lord', 'Sloth'
+    'pz', 'Star', 'Lord', 'Sloth', 'Squid',
+    'Carbon', 'Bank', 'Penguin', 'Hippo',
+    'Toxic', 'Boss', 'Rose', 'Potassium',
+    'Wolf', 'Pig', 'Garlic', 'Enigma', 'Owl',
+    'Dream', 'Bang', 'Sour', 'Demon', 'Beans',
+    'Badger', 'Guava', 'Maize', 'Hospital'
   ]
   suffixes = [
     '', '', '', '',
